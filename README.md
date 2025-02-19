@@ -2,6 +2,8 @@
 
 Web docs provided for [react-native-screenguard](https://github.com/gbumps/react-native-screenguard) library.
 
+website link [here](https://gbumps.github.io/react-native-screenguard)
+
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
