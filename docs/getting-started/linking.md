@@ -16,7 +16,11 @@ After the the automatic scripts completed successfully, run pod install and you'
 pod install
 ```
 
-## RN v0.59 
+## RN v0.59 (Deprecated)
+
+<blockquote class="custom-blockquote">
+I highly recommend to update your current React Native project to at least `0.68+` or higher to keep up-to-date with community, reducing issues and bug fixing, also New Architecture upgrade.
+</blockquote>
 
 React-native 0.59 and lower: Please do manual installation as follow
 
@@ -50,7 +54,7 @@ React-native 0.59 and lower: Please do manual installation as follow
       compile project(':react-native-screenguard')
   	```
 
-## Post installation for Android
+## Post installation for Android (Most important!)
 
 On Android, remember to setup a little bit as you will not receive the background color or the blur effect like in the video example.
 
