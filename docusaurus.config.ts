@@ -58,7 +58,7 @@ const config: Config = {
     {
       tagName: "meta",
       attributes: {
-        name: "react, native, capture, protection, screen capture, screen recording, prevent, screenshot, capture protection, screenguard, ios, android,",
+        name: "screenguard, detector, screen-capture, capture, protection, prevent, screenshot, capture-protection, screenshot-prevent, screenshot-blocker, screenshot-detector, screenshot-protection, screenshot-prevention, screenshot-blocking, screenshot-block, screenshot-blocking-ios, screenshot-blocking-android, screenshot-block-ios, screenshot-block-android, screenshot-blocker-ios, screenshot-blocker-android, react, native, ios, android",
       },
     },
     {
