@@ -8,6 +8,8 @@ Activate screenguard with a blurred effect view after captured.
 
 Blurview on Android using [Blurry](https://github.com/wasabeef/Blurry).
 
+Updated on `v1.0.8`: throw Exception on Android if activity is not declared inside `AndroidManifest.xml`. Refers [here](../getting-started/linking#post-installation-for-android-most-important) on how to resolve.
+
 ### Parameters
 
 Accepted a JS object with following parameters:
@@ -34,6 +36,19 @@ const data = {
 ScreenGuardModule.registerWithBlurView(data);
 ```
 
+#### New architecture (v1.0.8+)
+Starting from `v1.0.8+`, except `registerScreenshotEventListener` and `registerScreenRecordingEventListener`, all APIs have been upgraded to Promise. So you must use it asynchronously in your project.
+
+
+```js
+ScreenGuardModule.registerWithBlurView(data).then((_) => {console.log()})
+```
+
+or
+
+```js
+await ScreenGuardModule.registerWithBlurView(data);
+```
 
 ### Demo 
 

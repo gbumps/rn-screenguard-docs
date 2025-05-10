@@ -8,6 +8,9 @@ Activate screenguard with a custom image view and background color.
 
 ImageView using [SDWebImage](https://github.com/SDWebImage/SDWebImage) on **iOS** and [Glide](https://github.com/bumptech/glide) on **Android** for faster loading and caching.
 
+Updated on `v1.0.8`: throw Exception on Android if activity is not declared inside `AndroidManifest.xml`. Refers [here](../getting-started/linking#post-installation-for-android-most-important) on how to resolve.
+
+
 ### Parameters
 
 Accepted a JS object with following parameters:
@@ -102,6 +105,20 @@ ScreenGuardModule.registerWithImage(dataRequire);
 <blockquote class="custom-blockquote">
 `Note`: This feature is still in experimental on Android, so please use with caution as some unexpected behaviour might occurs.
 </blockquote>
+
+#### New architecture (v1.0.8+)
+Starting from `v1.0.8+`, except `registerScreenshotEventListener` and `registerScreenRecordingEventListener`, all APIs have been upgraded to Promise. So you must use it asynchronously in your project.
+
+
+```js
+ScreenGuardModule.registerWithImage(data).then((_) => {console.log()})
+```
+
+or
+
+```js
+await ScreenGuardModule.registerWithImage(data);
+```
 
 ### Demo
 

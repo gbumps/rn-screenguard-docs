@@ -4,45 +4,57 @@ sidebar_position: 1
 
 # New Architecture 
 
-The library has been updated with New Architecture, supported at beta testing release version `1.0.8-beta4`.
+The library has been updated with New Architecture, supported at beta testing release version `1.0.8-beta6`.
 
 # Install 
 
 ```
-npm i react-native-screenguard@1.0.8-beta4
+npm i react-native-screenguard@1.0.8-beta6
 ```
 
 or 
 
 ```
-yarn add react-native-screenguard@1.0.8-beta4
+yarn add react-native-screenguard@1.0.8-beta6
 
 ```
 
 - package.json
 
 ```
-"react-native-screenguard": "1.0.8-beta4",
+"react-native-screenguard": "1.0.8-beta6",
 	
 ```
 
 # Builds
 
-### 2025-04-11
-      Release 1.0.8-beta4
-      - `registerScreenshotEventListener`:  Fix iOS + android duplicate calls [#87](https://github.com/gbumps/react-native-screenguard/issues/87).
+### 1.0.8-beta6 (2025-05-11)
       
-### 2025-04-06
-      Release 1.0.8-beta3
-      - Code refactor 
+   - Android: Added checking activity declaration inside AndroidManifest.xml, throw error if not defined.
+   - fix #92
+
+### 1.0.8-beta5 (2025-04-22)
+
+   - Refactor API to Promise.
+   - Fix build failed due to duplicate import
+   - `registerScreenRecordingStatus`: added `screenRecordStatus` boolean. for checking if screen is start recording or stop recording.
+   - Fix `deactivateShield` crashed app
+
+### 1.0.8-beta4 (2025-04-11)
+
+   - `registerScreenshotEventListener`:  Fix iOS + android duplicate calls #87.
+      
+### 1.0.8-beta3 (2025-04-06)
+
+   - Code refactor 
  
-### 2025-04-05
-      Release 1.0.8-beta2
-      - Code refactor
+### 1.0.8-beta2 (2025-04-05)
+
+   - Code refactor
      
-### 2025-04-03
-      Release 1.0.8-beta1 
-      - Init build
+### 1.0.8-beta1 (2025-04-03)
+
+   - Init build
 
 For updates and bug fixing, please visit [here](https://github.com/gbumps/react-native-screenguard/pull/85) for more infos.
 

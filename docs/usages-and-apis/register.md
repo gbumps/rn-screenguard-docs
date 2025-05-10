@@ -6,6 +6,8 @@ sidebar_position: 1
 
 Activate the screenguard with your custom background color layout. 
 
+Updated on `v1.0.8`: throw Exception on Android if activity is not declared inside `AndroidManifest.xml`. Refers [here](../getting-started/linking#post-installation-for-android-most-important) on how to resolve.
+
 ### Parameters
 
 Accepted a JS object with following parameters:
@@ -27,6 +29,20 @@ ScreenGuardModule.register(
     timeAfterResume: 2000,
   },
 );
+```
+
+#### New architecture (v1.0.8+)
+Starting from `v1.0.8+`, except `registerScreenshotEventListener` and `registerScreenRecordingEventListener`, all APIs have been upgraded to Promise. So you must use it asynchronously in your project.
+
+
+```js
+ScreenGuardModule.register(data).then((_) => {console.log()})
+```
+
+or
+
+```js
+await ScreenGuardModule.register(data);
 ```
 
 ### Demo
