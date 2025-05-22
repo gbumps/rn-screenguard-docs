@@ -34,6 +34,8 @@ const sidebars: SidebarsConfig = {
       'usages-and-apis/register-screenshot-event-listener',
       'usages-and-apis/register-screen-recording-event-listener',
       'usages-and-apis/unregister',
+      'usages-and-apis/remove-screenshot-event-listener',
+      'usages-and-apis/remove-screen-record-event-listener',
     ],
     collapsed: false, // Ensures the category is expanded by default
   },

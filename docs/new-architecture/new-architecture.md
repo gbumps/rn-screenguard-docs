@@ -4,29 +4,38 @@ sidebar_position: 1
 
 # New Architecture 
 
-The library has been updated with New Architecture, supported at beta testing release version `1.0.8-beta6`.
+The library has been updated with New Architecture, supported at beta testing release version `1.0.8-beta7` and final version `1.0.8`.
 
 # Install 
 
 ```
-npm i react-native-screenguard@1.0.8-beta6
+npm i react-native-screenguard@1.0.8
 ```
 
 or 
 
 ```
-yarn add react-native-screenguard@1.0.8-beta6
+yarn add react-native-screenguard@1.0.8
 
 ```
 
 - package.json
 
 ```
-"react-native-screenguard": "1.0.8-beta6",
+"react-native-screenguard": "1.0.8",
 	
 ```
 
 # Builds
+
+### 1.0.8 (2025-05-22)
+
+  - Final release.
+
+### 1.0.8-beta7 (2025-05-21)
+
+  - Android: Remove checking activity declaration inside AndroidManifest.xml as not necessary
+  - Added missing iOS remove screenshot + screen record for old arch
 
 ### 1.0.8-beta6 (2025-05-11)
       

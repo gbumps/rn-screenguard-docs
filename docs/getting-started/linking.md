@@ -19,7 +19,7 @@ pod install
 ## RN v0.59 (Deprecated)
 
 <blockquote class="custom-blockquote">
-I highly recommend to update your current React Native project to at least `0.68+` or higher to keep up-to-date with community, reducing issues and bug fixing, also New Architecture upgrade.
+I highly recommend to update your current React Native project to at least `0.68+` or higher to keep up-to-date with community, reducing issues and bug fixing, also New Architecture supported.
 </blockquote>
 
 React-native 0.59 and lower: Please do manual installation as follow
@@ -54,9 +54,16 @@ React-native 0.59 and lower: Please do manual installation as follow
       compile project(':react-native-screenguard')
   	```
 
-## Post installation for Android (Most important!)
+## Post installation for Android
 
-On Android, remember to setup a little bit as you will not receive the background color or the blur effect like in the video example.
+In order to get this works correctly on Android, you must declare an activity name `com.screenguard.ScreenGuardColorActivity` inside your project `AndroidManifest.xml` 
+as you will not receive the background color or the blur effect like in the video example.
+
+<blockquote class="note-blockquote">
+<b>Note:</b> Updated on `v1.0.8` is no longer required as this activity has been declared inside `AndroidManifest` of the library, and merged with the project's Manifest file when start building.
+
+Only do this step if you are using `v1.0.6` or below
+</blockquote>
 
 1. Open up `[your_project_path]/android/app/src/main/AndroidManifest.xml` and add activity `com.screenguard.ScreenGuardColorActivity` like below
 

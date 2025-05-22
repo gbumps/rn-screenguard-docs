@@ -31,8 +31,9 @@ ScreenGuardModule.register(
 );
 ```
 
-#### New architecture (v1.0.8+)
-Starting from `v1.0.8+`, except `registerScreenshotEventListener` and `registerScreenRecordingEventListener`, all APIs have been upgraded to Promise. So you must use it asynchronously in your project.
+## New architecture (v1.0.8+)
+
+- Starting from `v1.0.8+`, except `registerScreenshotEventListener` and `registerScreenRecordingEventListener`, all APIs have been upgraded to Promise. So you must use it asynchronously in your project.
 
 
 ```js
