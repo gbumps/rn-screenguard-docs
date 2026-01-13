@@ -4,26 +4,82 @@ sidebar_position: 2
 
 # Installation
 
-Installation on a bare React Native project.
+## React Native CLI (Bare Workflow)
 
-### npm or yarn
+For standard React Native projects created with React Native CLI:
 
-npm:
+### npm
 
-```sh
-$ npm install react-native-screenguard --save
+```bash
+npm install react-native-screenguard --save
 ```
 
-yarn
+### yarn
 
-```sh
-$ yarn add react-native-screenguard
+```bash
+yarn add react-native-screenguard
 ```
 
-### For Expo user 
+After installation, continue to [Linking](./linking.md) for iOS pod installation.
 
-If your project is initialized and built with Expo, you need to eject from the managed workflow by running `expo eject` or run `npx expo prebuild` in order to use this library. This allows you to integrate native libraries that are not supported in the managed workflow. Check the Expo documentation below for more details.
+---
 
+## Expo Projects
+
+:::warning Development Build Required
+React Native ScreenGuard uses native code and **cannot run in Expo Go**. You must use a [development build](https://docs.expo.dev/develop/development-builds/introduction/).
+:::
+
+### Step 1: Install the package
+
+```bash
+npx expo install react-native-screenguard
 ```
-https://docs.expo.dev/workflow/prebuild/
+
+### Step 2: Generate native directories
+
+Run Prebuild to generate the native `android` and `ios` directories:
+
+```bash
+npx expo prebuild --clean
 ```
+
+This command creates native project files based on your `app.json` / `app.config.js` configuration.
+
+### Step 3: Build and run
+
+For local development:
+
+```bash
+# iOS
+npx expo run:ios
+
+# Android
+npx expo run:android
+```
+
+Or build using [EAS Build](https://docs.expo.dev/build/introduction/):
+
+```bash
+eas build --platform all
+```
+
+:::tip Cleaning Native Directories
+If you encounter issues after updating the library, try running:
+```bash
+npx expo prebuild --clean
+```
+This will regenerate native directories and ensure all native code is properly linked.
+:::
+
+:::info Why can't I use Expo Go?
+Expo Go is a pre-built app that contains a limited set of native modules. Since React Native ScreenGuard requires custom native code for screenshot blocking (using `FLAG_SECURE` on Android and secure `UITextField` on iOS), it cannot be included in Expo Go.
+
+A [development build](https://docs.expo.dev/develop/development-builds/introduction/) is essentially your own custom version of Expo Go that includes all the native modules your project needs.
+:::
+
+### Further Reading
+
+- [Expo Development Builds](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Continuous Native Generation (Prebuild)](https://docs.expo.dev/workflow/prebuild/)
+- [Local App Development](https://docs.expo.dev/guides/local-app-development/)

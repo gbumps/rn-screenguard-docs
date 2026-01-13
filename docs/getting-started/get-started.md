@@ -32,8 +32,8 @@ Here are some resources to help you out:
 
 - [Node.js](https://nodejs.org/en/download/) version 15.0 or above:
   - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-- `react-native` >= 0.59
-- `Android SDK` >= 31
+- `react-native` >= 0.68
+- `Android SDK` >= 29
 - `Cocoapods` >= 1.1.4
-- `iOS minimum deployment target` >= 12
+- `iOS minimum deployment target` >= 14
 - `typescript` >= 4.0.0

@@ -8,123 +8,111 @@ Activate screenguard with a custom image view and background color.
 
 ImageView using [SDWebImage](https://github.com/SDWebImage/SDWebImage) on **iOS** and [Glide](https://github.com/bumptech/glide) on **Android** for faster loading and caching.
 
+:::warning v2.0.0+ Requirement
+You must call [`initSettings()`](./init-settings.md) before using this function.
+:::
+
 ### Parameters
 
 Accepted a JS object with following parameters:
 
-| Name            | Required | Type     | Default value    | Description                              |
-|-----------------|----------|----------|------------------|------------------------------------------|
-| **width** | **YES** | **number** | |  **Width of the image** |
-| **height** | **YES** | **number** | | **Heigh of the image** |
-| **source** | **YES** | **Object** | | **Source of the image, can be a uri from network image or from your local project assets, accept (jpg,jpeg,png,gif,bmp,webp,svg), `source: {uri: 'path_to_your_network_img_directory.png'}` or `source: required(path_to_your_image.png)`**|
-| defaultSource | NO | Object | | default source if `source` uri failed to load, accept (jpg,jpeg,png,gif,bmp,webp,svg), Usage: `defaultSource: required(path_to_your_image.png)`|
-| backgroundColor | NO | string |  | background color behind the image, default BLACK (#000) |
-| alignment | NO | number |  | Position of image predefined in library, value from 0 -> 8, default value = 4 [(Explain below)](#alignment) |
-| top | NO | number |  | Top position of the image |
-| left | NO | number |  | Left position of the image |
-| bottom | NO | number |  | Bottom of the image |
-| right | NO | number |  | Right of the image |
-| timeAfterResume | NO  | number   | 1000 (in millis) | (Android only) A small amount of time (in milliseconds) for the view to disappear before jumping back to the main application view.| 
+| Name | Required | Type | Default | Description |
+|------|----------|------|---------|-------------|
+| **source** | **YES** | Object | | Source of the image. Can be a network URI or local asset. Accepts: jpg, jpeg, png, gif, bmp, webp, svg. Usage: `source: { uri: 'https://...' }` or `source: require('./image.png')` |
+| **width** | **YES** | number | | Width of the image |
+| **height** | **YES** | number | | Height of the image |
+| defaultSource | No | Object | | Fallback image if `source` fails to load. Usage: `defaultSource: require('./fallback.png')` |
+| backgroundColor | No | string | '#000000' | Background color behind the image |
+| alignment | No | number | 4 (center) | Position of image (0-8). See [alignment values](#alignment) |
+| top | No | number | | Custom top position |
+| left | No | number | | Custom left position |
+| bottom | No | number | | Custom bottom position |
+| right | No | number | | Custom right position |
+| ~~timeAfterResume~~ | ~~No~~ | ~~number~~ | ~~1000~~ | ⚠️ **Removed in v2.0.0** - Use [`initSettings()`](./init-settings.md) instead |
+
+> **v2.0.0 Migration:** In v1.x, `timeAfterResume` was passed directly to `registerWithImage()`. Starting from v2.0.0, set it in [`initSettings()`](./init-settings.md) instead.
 
 ### `alignment`
 
-  * **Definition:**
-  ```
-    topLeft:      0,
-    topCenter:    1,
-    topRight:     2,
-    centerLeft:   3,
-    center:       4,
-    centerRight:  5,
-    bottomLeft:   6,
-    bottomCenter: 7,
-    bottomRight:  8,
-  ```
-  * throw exception when not in between 0..8 and NaN
-  
-  * defaultValue = 4 when all positions(top, left, bottom, right) is null and alignment = null, 
+| Value | Position |
+|-------|----------|
+| 0 | topLeft |
+| 1 | topCenter |
+| 2 | topRight |
+| 3 | centerLeft |
+| 4 | center (default) |
+| 5 | centerRight |
+| 6 | bottomLeft |
+| 7 | bottomCenter |
+| 8 | bottomRight |
 
-  * Cannot combine with position(top, left, bottom, right) params cause this will always be checked 1st, and all positions will be skipped if not null.
-
-  * Set this param to null if you want to custom your own position with one of position param `top`, `left`, `bottom`, `right` above.
+:::note
+- Throws exception when alignment is not in range 0-8 or NaN
+- Cannot combine alignment with position params (top, left, bottom, right) - alignment is checked first
+- Set alignment to null if you want to use custom position params
+:::
 
 ### Example code
 
-set image uri and default source
+Using network image:
 
 ```js
 import ScreenGuardModule from 'react-native-screenguard';
 
-const data = {
+// Initialize first (required in v2.0.0+)
+await ScreenGuardModule.initSettings({
+  displayScreenGuardOverlay: true,
+  timeAfterResume: 2000,
+});
+
+// With network image and fallback
+await ScreenGuardModule.registerWithImage({
   height: 150,
   width: 200,
   source: {
-    uri: 'https://www.icegif.com/wp-content/uploads/2022/09/icegif-386.gif',
+    uri: 'https://example.com/image.gif',
   },
-  defaultSource: require('./images/test.png'),
-  backgroundColor: color,
-  alignment: 5 // Alignment.centerRight
-},
-//register with an image
-ScreenGuardModule.registerWithImage(data);
+  defaultSource: require('./images/fallback.png'),
+  backgroundColor: '#1a1a2e',
+  alignment: 4, // center
+});
 ```
 
-using image source from local
+Using local image:
 
 ```js
-import ScreenGuardModule from 'react-native-screenguard';
-
-const dataRequire = {
+await ScreenGuardModule.registerWithImage({
   height: 150,
   width: 200,
-  source: require('./images/test.png'),
-  backgroundColor: color,
-},
-ScreenGuardModule.registerWithImage(dataRequire);
+  source: require('./images/logo.png'),
+  backgroundColor: '#1a1a2e',
+});
 ```
 
-set image position
+Using custom position:
 
 ```js
-import ScreenGuardModule from 'react-native-screenguard';
-
-const dataRequire = {
+await ScreenGuardModule.registerWithImage({
   height: 150,
   width: 200,
+  source: require('./images/logo.png'),
+  backgroundColor: '#1a1a2e',
+  alignment: null, // Must be null to use custom position
   top: 50,
-  lef: 50,
-  source: require('./images/test.png'),
-  backgroundColor: color,
-},
-ScreenGuardModule.registerWithImage(dataRequire);
+  left: 50,
+});
 ```
 
-<blockquote class="custom-blockquote">
-`Note`: This feature is still in experimental on Android, so please use with caution as some unexpected behaviour might occurs.
-</blockquote>
-
-## New architecture (v1.0.8+)
-
-- Starting from `v1.0.8+`, except `registerScreenshotEventListener` and `registerScreenRecordingEventListener`, all APIs have been upgraded to Promise. So you must use it asynchronously in your project.
-
-
-```js
-ScreenGuardModule.registerWithImage(data).then((_) => {console.log()})
-```
-
-or
-
-```js
-await ScreenGuardModule.registerWithImage(data);
-```
+:::info Android Note
+On Android, if `displayScreenguardOverlayAndroid` is set to `false` in `initSettings()`, calling `registerWithImage()` will automatically switch to `registerWithoutEffect()` and show a warning.
+:::
 
 ## Demo
 
-iOS
+**iOS**
 
-<iframe width="375" height="667" src="https://player.vimeo.com/video/953622185" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="264423413-087dd9d5-b64f-4daf-a804-acc9a3cb4cc2"></iframe>
+{/* TODO: Add iOS demo video here */}
 
+**Android**
 
-Android
-
-<iframe width="375" height="667" src="https://github.com/gbumps/react-native-screenguard/assets/16846439/dd2d8191-555f-4f84-abf5-6cbcf67dc84b" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{/* TODO: Add Android demo video here */}

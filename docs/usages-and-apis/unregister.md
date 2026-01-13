@@ -1,31 +1,27 @@
 ---
-sidebar_position: 7
+sidebar_position: 5
 ---
 
 # `unregister`
 
-Deactivate all the screenshot protection and callback handlers.
+Deactivate all the screenshot protection.
+
+:::warning v2.0.0+ Requirement
+You must call [`initSettings()`](./init-settings.md) before using this function.
+:::
 
 ## Example code
 
 ```js
-ScreenGuardModule.unregister();
-```
+import ScreenGuardModule from 'react-native-screenguard';
 
-## New architecture (v1.0.8+)
-
-- Starting from `v1.0.8+`, except `registerScreenshotEventListener` and `registerScreenRecordingEventListener`, all APIs have been upgraded to Promise. So you must use it asynchronously in your project.
-
-```js
-ScreenGuardModule.unregister().then((_) => {console.log()})
-```
-
-or
-
-```js
 await ScreenGuardModule.unregister();
 ```
 
-- `unregister` will not remove screenshot EventListener and screenRecord EventListener. You must do it your own by using [removeScreenshotEventListener](./remove-screenshot-event-listener.md) and [removeRecordingEventListener](./remove-screen-record-event-listener.md).
+:::tip v2.0.0 Changes
+In v2.0.0+, you no longer need to manually remove event listeners:
+- `useSGScreenShot` hook automatically cleans up on component unmount
+- `useSGScreenRecord` hook automatically cleans up on component unmount
 
-
+The old `removeScreenshotEventListener()` and `removeRecordingEventListener()` functions have been removed.
+:::

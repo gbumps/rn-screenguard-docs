@@ -4,102 +4,123 @@ sidebar_position: 3
 
 # Linking
 
-## RN v0.60+
+## React Native 0.68+
 
-From React native v0.60 and above, linking is automatic. So you don't need to run `react-native link` anymore. Refer [here](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md).
+From React Native v0.68 and above, linking is **automatic** via [Autolinking](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md). No manual linking is required.
 
-#### iOS
+### iOS
 
-After the the automatic scripts completed successfully, run pod install and you're good to go:
+After installation, navigate to the `ios` directory and install CocoaPods dependencies:
 
+```bash
+cd ios && pod install
 ```
-pod install
+
+### Android
+
+No additional steps required. The library will be automatically linked during the build process.
+
+---
+
+## Deprecated
+
+:::warning No Longer Supported
+The following sections are for legacy versions only. If you are using **React Native 0.68+** and **react-native-screenguard v1.0.8+**, you can skip this entire section.
+:::
+
+<details>
+<summary><strong>React Native 0.59 and below (Manual Linking)</strong></summary>
+
+:::danger Not Supported in v2.0.0+
+React Native 0.59 and below is **no longer supported** in v2.0.0. Please upgrade to React Native 0.68+ to use the latest version.
+:::
+
+#### iOS Manual Linking
+
+1. In Xcode, right-click on `Libraries` in the project navigator
+2. Select **Add Files to [your project's name]**
+3. Navigate to `node_modules/react-native-screenguard` and add `ScreenGuard.xcodeproj`
+4. Select your project in the navigator, go to **Build Phases** → **Link Binary With Libraries**
+5. Add `libScreenguard.a`
+
+#### Android Manual Linking
+
+1. Open `android/app/src/main/java/[...]/MainActivity.java`:
+
+```java
+import com.screenguard.ScreenGuardPackage; // Add this import
+
+// Add to getPackages() method:
+new ScreenGuardPackage()
 ```
 
-## RN v0.59 (Deprecated)
+2. Add to `android/settings.gradle`:
 
-<blockquote class="custom-blockquote">
-I highly recommend to update your current React Native project to at least `0.68+` or higher to keep up-to-date with community, reducing issues and bug fixing, also New Architecture supported.
-</blockquote>
+```groovy
+include ':react-native-screenguard'
+project(':react-native-screenguard').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-screenguard/android')
+```
 
-React-native 0.59 and lower: Please do manual installation as follow
+3. Add to `android/app/build.gradle` dependencies:
 
-#### iOS
+```groovy
+implementation project(':react-native-screenguard')
+```
 
-    1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
+</details>
 
-    2. Go to `node_modules` ➜ `react-native-screenguard` and add `ScreenGuard.xcodeproj`
+<details>
+<summary><strong>Android Post-Installation (v1.0.6 and below)</strong></summary>
 
-    3. In XCode, in the project navigator, select your project. Add `libScreenguard.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+:::info Not Required in v1.0.8+
+Starting from **v1.0.8**, the activity is automatically declared in the library's `AndroidManifest.xml` and merged during build. This step is only required for **v1.0.6 and below**.
+:::
 
+For versions **v1.0.6 and below**, you must manually declare the `ScreenGuardColorActivity` in your `AndroidManifest.xml` to enable background color and blur effects.
 
-#### Android
+#### Step 1: Update AndroidManifest.xml
 
-    1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-
-     - Add `import com.screenguard.ScreenGuardPackage;` to the imports at the top of the file
-
-     - Add `new ScreenGuardPackage()` to the list returned by the `getPackages()` method
-
-    2. Append the following lines to `android/settings.gradle`:
-
-  	```
-  	include ':react-native-screenguard'
-  	project(':react-native-screenguard').projectDir = new File(rootProject.projectDir,'../node_modules/react-native-screenguard/android')
-  	```
-
-    3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-
-  	```
-      compile project(':react-native-screenguard')
-  	```
-
-## Post installation for Android
-
-In order to get this works correctly on Android, you must declare an activity name `com.screenguard.ScreenGuardColorActivity` inside your project `AndroidManifest.xml` 
-as you will not receive the background color or the blur effect like in the video example.
-
-<blockquote class="note-blockquote">
-<b>Note:</b> Updated on `v1.0.8` is no longer required as this activity has been declared inside `AndroidManifest` of the library, and merged with the project's Manifest file when start building.
-
-Only do this step if you are using `v1.0.6` or below
-</blockquote>
-
-1. Open up `[your_project_path]/android/app/src/main/AndroidManifest.xml` and add activity `com.screenguard.ScreenGuardColorActivity` like below
+Open `android/app/src/main/AndroidManifest.xml` and add the activity:
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <application ......>
-      	<activity
-      	  android:name=".MainActivity" .........>
-      	  ..........
-      	</activity>
+    <application ...>
+        <activity android:name=".MainActivity" ...>
+            ...
+        </activity>
 
-+       <activity android:name="com.screenguard.ScreenGuardColorActivity"
-+            android:theme="@style/Theme.AppCompat.Translucent"
-+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-+            android:windowSoftInputMode="stateAlwaysVisible|adjustResize"
-+            android:exported="false"
-+        />
+        <!-- Add this activity -->
+        <activity
+            android:name="com.screenguard.ScreenGuardColorActivity"
+            android:theme="@style/Theme.AppCompat.Translucent"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustResize"
+            android:exported="false"
+        />
     </application>
 </manifest>
 ```
 
-2. Open up `[your_project_path]/android/app/src/main/res/values/styles.xml` and add style `Theme.AppCompat.Translucent` like below
+#### Step 2: Add Translucent Theme
 
+Open `android/app/src/main/res/values/styles.xml` and add the theme:
 
 ```xml
-<resource>
+<resources>
+    <style name="AppTheme">
+        <!-- Your existing theme -->
+    </style>
 
-<style name="AppTheme">your current app style theme.............</style>
-
-+ <style name="Theme.AppCompat.Translucent">
-+        <item name="android:windowNoTitle">true</item>
-+        <item name="android:windowBackground">@android:color/transparent</item>
-+        <item name="android:colorBackgroundCacheHint">@null</item>
-+        <item name="android:windowIsTranslucent">true</item>
-+        <item name="android:windowAnimationStyle">@null</item>
-+        <item name="android:windowSoftInputMode">adjustResize</item>
-+ </style>
-</resource>
+    <!-- Add this theme -->
+    <style name="Theme.AppCompat.Translucent">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+</resources>
 ```
+
+</details>

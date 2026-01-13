@@ -4,33 +4,40 @@ sidebar_position: 1
 
 # New Architecture 
 
-The library has been updated with New Architecture, supported at beta testing release version `1.0.8-beta7` and final version `1.0.8`.
+The library has been updated with New Architecture support. Full support available from version `2.0.0`.
 
-# Install 
+## Latest Version (v2.0.0)
 
-```
-npm i react-native-screenguard@1.0.8
+```bash
+npm i react-native-screenguard@2.0.0
 ```
 
 or 
 
-```
-yarn add react-native-screenguard@1.0.8
-
-```
-
-- package.json
-
-```
-"react-native-screenguard": "1.0.8",
-	
+```bash
+yarn add react-native-screenguard@2.0.0
 ```
 
-# Builds
+### What's New in v2.0.0
+
+- **New `initSettings()` API** - Required initialization before using any other API
+- **React Hooks** - `useSGScreenShot` and `useSGScreenRecord` replace manual event listeners
+- **New `getScreenGuardLogs()` API** - Retrieve activity logs for debugging
+- **Fixed Android keyboard issue** - Text input no longer disabled when screenguard is active
+- **Improved settings** - New options for fine-grained control over overlay display
+- **Removed deprecated APIs** - `registerScreenshotEventListener`, `registerScreenRecordingEventListener`, `removeScreenshotEventListener`, `removeRecordingEventListener`
+
+---
+
+## Previous Versions
+
+### 1.0.9 (2025-05-24)
+
+  - Hot fix Android old arch build failed and library not recognizable when running `npx react-native config`. 
 
 ### 1.0.8 (2025-05-22)
 
-  - Final release.
+  - Final release for v1.x.
 
 ### 1.0.8-beta7 (2025-05-21)
 
@@ -65,6 +72,6 @@ yarn add react-native-screenguard@1.0.8
 
    - Init build
 
-For updates and bug fixing, please visit [here](https://github.com/gbumps/react-native-screenguard/pull/85) for more infos.
+For updates and bug fixing, please visit [here](https://github.com/gbumps/react-native-screenguard/releases) for more infos.
 
 [Reference](https://reactnative.dev/docs/the-new-architecture/landing-page)
