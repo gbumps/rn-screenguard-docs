@@ -58,7 +58,7 @@ const config: Config = {
     {
       tagName: "meta",
       attributes: {
-        name: "screenguard, detector, screen-capture, capture, protection, prevent, screenshot, capture-protection, screenshot-prevent, screenshot-blocker, screenshot-detector, screenshot-protection, screenshot-prevention, screenshot-blocking, screenshot-block, screenshot-blocking-ios, screenshot-blocking-android, screenshot-block-ios, screenshot-block-android, screenshot-blocker-ios, screenshot-blocker-android, react, native, ios, android",
+        name: "screenguard, detector, screen-capture, capture, prevent, screenshot, capture-protection, screenshot-prevent, screenshot-blocker, screenshot-detector, screenshot-protection, screenshot-prevention, screenshot-blocking, screenshot-block, screenshot-blocking-ios, screenshot-blocking-android, screenshot-block-ios, screenshot-block-android, screenshot-blocker-ios, screenshot-blocker-android, react, native, ios, android",
       },
     },
     {
@@ -117,13 +117,9 @@ const config: Config = {
         },
       ],
     },
-    footer: {
-      style: "dark",
-      copyright: `Copyright © ${new Date().getFullYear()} Gbumps. Built with Docusaurus.`,
-    },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.oneDark,
+      darkTheme: prismThemes.oneDark,
     },
   } satisfies Preset.ThemeConfig,
 };

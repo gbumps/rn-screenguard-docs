@@ -104,15 +104,20 @@ await ScreenGuardModule.registerWithImage({
 ```
 
 :::info Android Note
-On Android, if `displayScreenguardOverlayAndroid` is set to `false` in `initSettings()`, calling `registerWithImage()` will automatically switch to `registerWithoutEffect()` and show a warning.
+On Android, if `displayScreenguardOverlayAndroid` is set to `false` in `initSettings()`, calling `registerWithImage()` will automatically switch to `registerWithoutEffect()`.
 :::
 
 ## Demo
 
-**iOS**
-
-{/* TODO: Add iOS demo video here */}
-
-**Android**
-
-{/* TODO: Add Android demo video here */}
+<div style={{display: 'flex', gap: '20px', flexWrap: 'wrap'}}>
+  <div style={{textAlign: 'center'}}>
+    <span style={{backgroundColor: '#007AFF', color: 'white', padding: '4px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold'}}>iOS</span>
+    <br /><br />
+    <iframe width="360" height="640" src="https://player.vimeo.com/video/953622185" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="iOS demo" />
+  </div>
+  <div style={{textAlign: 'center'}}>
+    <span style={{backgroundColor: '#3DDC84', color: 'white', padding: '4px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold'}}>Android</span>
+    <br /><br />
+    <video width="360" height="640" controls src="https://github-production-user-asset-6210df.s3.amazonaws.com/16846439/264429607-dd2d8191-555f-4f84-abf5-6cbcf67dc84b.mp4" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+  </div>
+</div>

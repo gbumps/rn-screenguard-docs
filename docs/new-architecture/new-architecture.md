@@ -4,22 +4,33 @@ sidebar_position: 1
 
 # New Architecture 
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 The library has been updated with New Architecture support. Full support available from version `2.0.0`.
 
 ## Latest Version (v2.0.0)
 
-```bash
-npm i react-native-screenguard@2.0.0
-```
-
-or 
-
-```bash
-yarn add react-native-screenguard@2.0.0
-```
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+    ```bash
+    npm install react-native-screenguard@2.0.0
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```bash
+    yarn add react-native-screenguard@2.0.0
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash
+    pnpm add react-native-screenguard@2.0.0
+    ```
+  </TabItem>
+</Tabs>
 
 ### What's New in v2.0.0
-
+- separate screenshot and screen recording through `initSettings()`
 - **New `initSettings()` API** - Required initialization before using any other API
 - **React Hooks** - `useSGScreenShot` and `useSGScreenRecord` replace manual event listeners
 - **New `getScreenGuardLogs()` API** - Retrieve activity logs for debugging
@@ -30,6 +41,12 @@ yarn add react-native-screenguard@2.0.0
 ---
 
 ## Previous Versions
+
+### 1.1.0 (2025-07-09)
+
+  - fix [#101](https://github.com/gbumps/react-native-screenguard/issues/101) and [#100](https://github.com/gbumps/react-native-screenguard/issues/100) due to color parsing failed + enhance reading hex string with 3 characters (for example #fff)
+  - fix [#102](https://github.com/gbumps/react-native-screenguard/issues/102) due to possibly webp not supported.
+  - fix [#103](https://github.com/gbumps/react-native-screenguard/issues/103) due to BasedReactPackage not yet implemented on RN 0.73.
 
 ### 1.0.9 (2025-05-24)
 

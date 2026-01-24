@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# `useSGScreenShot`
+# `useSGScreenShot` <span class="new-badge">NEW ✨</span>
 
 :::info Version
 **Available from v2.0.0+**
@@ -17,7 +17,7 @@ function useSGScreenShot(
   listener?: (event: ScreenGuardScreenShotPathDataObject) => void
 ): {
   screenshotData: ScreenGuardScreenShotPathDataObject | null;
-  protectionStatus: ScreenGuardHookData | null;
+  activationStatus: ScreenGuardHookData | null;
 }
 ```
 
@@ -32,7 +32,7 @@ function useSGScreenShot(
 | Name | Type | Description |
 |------|------|-------------|
 | screenshotData | object \| null | Data about the last screenshot captured |
-| protectionStatus | object \| null | Current protection status of ScreenGuard |
+| activationStatus | object \| null | Current activation status of ScreenGuard |
 
 ---
 
@@ -54,19 +54,19 @@ interface ScreenGuardScreenShotPathDataObject {
 
 ---
 
-#### `protectionStatus` Object
+#### `activationStatus` Object
 
 ```ts
 interface ScreenGuardHookData {
   method: string;
-  isProtected: boolean;
+  isActivated: boolean;
 }
 ```
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `method` | string | The protection method currently active. Possible values: `'blur'`, `'image'`, `'color'`, `'none'`, `''` (empty when not activated) |
-| `isProtected` | boolean | `true` if screen protection is currently active, `false` otherwise |
+| `method` | string | The activation method currently active. Possible values: `'blur'`, `'image'`, `'color'`, `''` (empty when not activated) |
+| `isActivated` | boolean | `true` if screenguard is currently activated, `false` otherwise |
 
 ### Example code
 
@@ -78,19 +78,18 @@ import { View, Text } from 'react-native';
 import ScreenGuardModule, { useSGScreenShot } from 'react-native-screenguard';
 
 function App() {
-  const { screenshotData, protectionStatus } = useSGScreenShot();
+  const { screenshotData, activationStatus } = useSGScreenShot();
 
   React.useEffect(() => {
     // Initialize ScreenGuard
     ScreenGuardModule.initSettings({
-      enableCapture: true,
       getScreenshotPath: true,
     });
   }, []);
 
   return (
     <View>
-      <Text>Protected: {protectionStatus?.isProtected ? 'Yes' : 'No'}</Text>
+      <Text>Activated: {activationStatus?.isActivated ? 'Yes' : 'No'}</Text>
       {screenshotData && (
         <Text>Last screenshot: {screenshotData.name}</Text>
       )}
@@ -119,15 +118,11 @@ function App() {
 ### Notes
 
 - The hook automatically handles subscription cleanup when the component unmounts.
-- Requires `enableCapture: true` in `initSettings()` to receive screenshot events.
-- Use `limitCaptureEvtCount` in `initSettings()` to limit the number of screenshot events triggered:
-  - `null` or `0`: Trigger every time (default)
+- Callback listener will be triggered base on [`limitCaptureEvtCount`](./init-settings#limitcaptureevtcount) in [`initSettings()`](./init-settings.md).
+  - `null`, `0`: Trigger every time (unlimited)
   - `> 0`: Only trigger for the first N screenshots
 
 :::note Android Limitation
-Screenshot events may not be received while screenguard protection is active (`FLAG_SECURE` blocks standard screenshot attempts). However, events may still be received from third-party screenshot apps.
+Screenshot events may not be received while screenguard is active due to `FLAG_SECURE` blocks standard screenshot attempts. However, events may still be received from third-party screenshot apps like (XRecorder, Screen Recorder, etc.)
 :::
 
-## Demo
-
-{/* TODO: Add demo video here */}

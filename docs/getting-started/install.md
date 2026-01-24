@@ -4,21 +4,30 @@ sidebar_position: 2
 
 # Installation
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## React Native CLI (Bare Workflow)
 
 For standard React Native projects created with React Native CLI:
 
-### npm
-
-```bash
-npm install react-native-screenguard --save
-```
-
-### yarn
-
-```bash
-yarn add react-native-screenguard
-```
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+    ```bash
+    npm install react-native-screenguard --save
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```bash
+    yarn add react-native-screenguard
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash
+    pnpm add react-native-screenguard
+    ```
+  </TabItem>
+</Tabs>
 
 After installation, continue to [Linking](./linking.md) for iOS pod installation.
 
@@ -73,7 +82,7 @@ This will regenerate native directories and ensure all native code is properly l
 :::
 
 :::info Why can't I use Expo Go?
-Expo Go is a pre-built app that contains a limited set of native modules. Since React Native ScreenGuard requires custom native code for screenshot blocking (using `FLAG_SECURE` on Android and secure `UITextField` on iOS), it cannot be included in Expo Go.
+Expo Go is a pre-built app that contains a limited set of native modules. Since React Native ScreenGuard requires custom native code for screenshot blocking, it cannot be included in Expo Go.
 
 A [development build](https://docs.expo.dev/develop/development-builds/introduction/) is essentially your own custom version of Expo Go that includes all the native modules your project needs.
 :::

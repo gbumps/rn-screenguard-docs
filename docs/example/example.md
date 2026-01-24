@@ -27,7 +27,7 @@ export default function App() {
   const [isProtected, setIsProtected] = useState(false);
 
   // Screenshot detection hook
-  const { screenshotData, protectionStatus } = useSGScreenShot((event) => {
+  const { screenshotData, activationStatus } = useSGScreenShot((event) => {
     Alert.alert('Screenshot Detected!', `File: ${event.name || 'unknown'}`);
   });
 
@@ -43,8 +43,6 @@ export default function App() {
     const init = async () => {
       try {
         await ScreenGuardModule.initSettings({
-          enableCapture: true,
-          enableRecord: true,
           displayScreenGuardOverlay: true,
           timeAfterResume: 2000,
           getScreenshotPath: true,
@@ -63,7 +61,6 @@ export default function App() {
     };
   }, []);
 
-  // Activate protection with color
   const activateWithColor = async () => {
     try {
       await ScreenGuardModule.register({
@@ -75,7 +72,6 @@ export default function App() {
     }
   };
 
-  // Activate protection with blur
   const activateWithBlur = async () => {
     try {
       await ScreenGuardModule.registerWithBlurView({
@@ -87,11 +83,10 @@ export default function App() {
     }
   };
 
-  // Activate protection with image
   const activateWithImage = async () => {
     try {
       await ScreenGuardModule.registerWithImage({
-        source: require('./assets/logo.png'), // Your local image
+        source: require('./assets/logo.png'),
         width: 200,
         height: 200,
         backgroundColor: '#0f0f23',
@@ -103,7 +98,6 @@ export default function App() {
     }
   };
 
-  // Deactivate protection
   const deactivate = async () => {
     try {
       await ScreenGuardModule.unregister();
@@ -120,10 +114,10 @@ export default function App() {
       {/* Status Display */}
       <View style={styles.statusContainer}>
         <Text style={styles.statusText}>
-          Protection: {protectionStatus?.isProtected ? '🛡️ Active' : '⚪ Inactive'}
+          Protection: {activationStatus?.isActivated ? '🛡️ Active' : '⚪ Inactive'}
         </Text>
         <Text style={styles.statusText}>
-          Method: {protectionStatus?.method || 'None'}
+          Method: {activationStatus?.method || 'None'}
         </Text>
         <Text style={styles.statusText}>
           Recording: {recordingData?.isRecording ? '🔴 Yes' : '⚪ No'}

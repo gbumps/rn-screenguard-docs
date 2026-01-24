@@ -33,7 +33,7 @@ await ScreenGuardModule.initSettings({
   timeAfterResume: 2000,
 });
 
-// Then activate protection
+// Then activate ScrenGuard
 await ScreenGuardModule.register({
   backgroundColor: '#0F9D58',
 });
@@ -45,11 +45,16 @@ On Android, if `displayScreenguardOverlayAndroid` is set to `false` in `initSett
 
 ## Demo
 
-**iOS**
+<div style={{display: 'flex', gap: '20px', flexWrap: 'wrap'}}>
+  <div style={{textAlign: 'center'}}>
+    <span style={{backgroundColor: '#007AFF', color: 'white', padding: '4px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold'}}>iOS</span>
+    <br /><br />
+    <video width="360" height="640" controls src="https://github-production-user-asset-6210df.s3.amazonaws.com/16846439/243557545-fd4b3662-6e3b-4428-a927-23ee2068c22a.mp4" />
+  </div>
+  <div style={{textAlign: 'center'}}>
+    <span style={{backgroundColor: '#3DDC84', color: 'white', padding: '4px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold'}}>Android</span>
+    <br /><br />
+    <video width="360" height="640" controls src="https://github-production-user-asset-6210df.s3.amazonaws.com/16846439/248707554-da99c58c-fb79-4885-b496-ecb242bd4cf8.mp4" />
+  </div>
+</div>
 
-{/* TODO: Add iOS demo video here */}
-
-
-**Android**
-
-{/* TODO: Add Android demo video here */}

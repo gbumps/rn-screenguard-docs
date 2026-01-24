@@ -81,3 +81,73 @@
 [data-theme='dark'] .sidebar-new-badge>.menu__list-item-collapsible>.menu__link::after {
   background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
 }
+
+/* Header "New" badge (for doc pages) */
+.new-badge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+[data-theme='dark'] .new-badge {
+  background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
+}
+
+/* Limit content width on large screens */
+.container,
+.navbar__inner {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.navbar__inner {
+  padding: 0 1rem;
+}
+
+/* Limit entire doc layout (including sidebar) on large screens */
+[class*='docRoot'] {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Ensure the main doc page wrapper centers the constrained layout */
+[class*='docPage'],
+main[class*='docMainContainer'] {
+  display: flex;
+  justify-content: center;
+}
+
+/* Remove blue highlighting from details elements */
+details {
+  background-color: transparent !important;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+details>summary {
+  background-color: transparent !important;
+  padding: 12px 0;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+details[open]>summary {
+  border-bottom: none;
+}
+
+details>*:not(summary) {
+  padding: 0 0 16px 0;
+}

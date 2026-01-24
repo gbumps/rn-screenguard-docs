@@ -4,6 +4,10 @@ sidebar_position: 4
 
 # `registerWithoutEffect`
 
+:::caution Deprecated in v2.0.0
+This function is deprecated. Use [`initSettings()`](./init-settings.md) with `displayScreenguardOverlayAndroid: false` instead, then call any register function.
+:::
+
 **(Android only)** Activate screenguard without any visual effect (blur, image, color) for Android.
 
 This uses `FLAG_SECURE` to block screenshot and screen recording without showing any overlay.
@@ -30,6 +34,4 @@ await ScreenGuardModule.registerWithoutEffect();
 - This is useful when you want to block screenshots without showing any visual overlay to the user.
 :::
 
-## Demo
 
-{/* TODO: Add Android demo video here */}

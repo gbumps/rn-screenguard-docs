@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# `getScreenGuardLogs`
+# `getScreenGuardLogs` <span class="new-badge">NEW ✨</span>
 
 :::info Version
 **Available from v2.0.0+**
@@ -36,7 +36,7 @@ interface ScreenGuardLogEntry {
 | `timestamp` | number | Unix timestamp (milliseconds) when the log was recorded |
 | `action` | string | The action that was performed. Possible values: `'activate'`, `'deactivate'`, `'screenshot_detected'`, `'recording_started'`, `'recording_stopped'` |
 | `isProtected` | boolean | Whether the screen was protected at the time of this log entry |
-| `method` | string | The protection method used. Possible values: `'blur'`, `'image'`, `'color'`, `'none'`, `''` (empty if not activated) |
+| `method` | string | The effect method used. Possible values: `'blur'`, `'image'`, `'color'`, `'none'`, `''` (empty if not activated) |
 
 ### Example code
 

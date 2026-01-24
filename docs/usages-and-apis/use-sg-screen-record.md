@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# `useSGScreenRecord`
+# `useSGScreenRecord` <span class="new-badge">NEW ✨</span>
 
 :::info Version
 **Available from v2.0.0+**
@@ -21,7 +21,7 @@ function useSGScreenRecord(
   listener?: (event: ScreenGuardScreenRecordDataObject) => void
 ): {
   recordingData: ScreenGuardScreenRecordDataObject | null;
-  protectionStatus: ScreenGuardHookData | null;
+  activationStatus: ScreenGuardHookData | null;
 }
 ```
 
@@ -36,7 +36,7 @@ function useSGScreenRecord(
 | Name | Type | Description |
 |------|------|-------------|
 | recordingData | object \| null | Data about current recording state |
-| protectionStatus | object \| null | Current protection status of ScreenGuard |
+| activationStatus | object \| null | Current activation status of ScreenGuard |
 
 ---
 
@@ -54,19 +54,19 @@ interface ScreenGuardScreenRecordDataObject {
 
 ---
 
-#### `protectionStatus` Object
+#### `activationStatus` Object
 
 ```ts
 interface ScreenGuardHookData {
   method: string;
-  isProtected: boolean;
+  isActivated: boolean;
 }
 ```
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `method` | string | The protection method currently active. Possible values: `'blur'`, `'image'`, `'color'`, `'none'`, `''` (empty when not activated) |
-| `isProtected` | boolean | `true` if screen protection is currently active, `false` otherwise |
+| `method` | string | The activation method currently active. Possible values: `'blur'`, `'image'`, `'color'`, `''` (empty when not activated) |
+| `isActivated` | boolean | `true` if screenguard is currently activated, `false` otherwise |
 
 ### Example code
 
@@ -78,17 +78,15 @@ import { View, Text } from 'react-native';
 import ScreenGuardModule, { useSGScreenRecord } from 'react-native-screenguard';
 
 function App() {
-  const { recordingData, protectionStatus } = useSGScreenRecord();
+  const { recordingData, activationStatus } = useSGScreenRecord();
 
   React.useEffect(() => {
-    ScreenGuardModule.initSettings({
-      enableRecord: true,
-    });
+    ScreenGuardModule.initSettings();
   }, []);
 
   return (
     <View>
-      <Text>Protected: {protectionStatus?.isProtected ? 'Yes' : 'No'}</Text>
+      <Text>Activated: {activationStatus?.isActivated ? 'Yes' : 'No'}</Text>
       <Text>
         Recording: {recordingData?.isRecording ? '🔴 Recording...' : '⚪ Not recording'}
       </Text>
@@ -120,7 +118,6 @@ function App() {
 ### Notes
 
 - The hook automatically handles subscription cleanup when the component unmounts.
-- Requires `enableRecord: true` in `initSettings()` to receive recording events.
 
 :::note Platform Support
 - **iOS**: Full support on iOS 13+
