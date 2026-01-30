@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "React Native Screenguard",
+    "description": "The title in the navbar"
+  },
+  "item.label.Docs": {
+    "message": "문서",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Issues": {
+    "message": "이슈",
+    "description": "Navbar item with label Issues"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

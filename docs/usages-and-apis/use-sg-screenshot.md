@@ -10,7 +10,7 @@ sidebar_position: 11
 
 A React hook for detecting screenshot events. Replaces `registerScreenshotEventListener` from v1.x.
 
-### Signature
+### Core Function
 
 ```ts
 function useSGScreenShot(

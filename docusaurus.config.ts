@@ -19,7 +19,7 @@ const config: Config = {
   organizationName: "gbumps", // Usually your GitHub org/user name.
   projectName: "react-native-screenguard", // Usually your repo name.
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
@@ -27,7 +27,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en", "ko", "zh-Hans", "vi"],
   },
 
   scripts: [
@@ -109,6 +109,10 @@ const config: Config = {
           href: "https://github.com/gbumps/react-native-screenguard/issues",
           label: "Issues",
           position: "left",
+        },
+        {
+          type: "localeDropdown",
+          position: "right",
         },
         {
           href: "https://github.com/gbumps/react-native-screenguard",

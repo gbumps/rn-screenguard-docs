@@ -1,13 +1,15 @@
+import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Heading from '@theme/Heading';
 import { Redirect } from '@docusaurus/router';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -18,8 +20,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/getting-started/get-started">
-              Read Docs
+            to={useBaseUrl('/docs/getting-started/get-started')}>
+            Read Docs
           </Link>
         </div>
       </div>
@@ -40,11 +42,10 @@ const StatCounter = () => {
   );
 };
 
-export default function Home(): JSX.Element {
+export default function Home(): React.ReactNode {
   return (
     <>
-      <Redirect to='/react-native-screenguard/docs/getting-started/get-started' />
-      {/* <HomepageHeader /> */}
+      <Redirect to={useBaseUrl('/docs/getting-started/get-started')} />
       <StatCounter />
     </>
   );

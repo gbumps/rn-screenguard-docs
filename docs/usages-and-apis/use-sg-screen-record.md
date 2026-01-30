@@ -14,7 +14,7 @@ A React hook for detecting screen recording events. Replaces `registerScreenReco
 - iOS 13+
 - Android 15+ (API 35+)
 
-### Signature
+### Core Function
 
 ```ts
 function useSGScreenRecord(

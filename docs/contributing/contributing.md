@@ -102,6 +102,13 @@ npm publish
 
 ---
 
+## Contributing to this Web Documentation
+
+If you find typos, translation errors, or would like to improve the documentation, please contribute to the documentation repository:
+[rn-screenguard-docs](https://github.com/gbumps/rn-screenguard-docs)
+
+---
+
 ## Commit Message Convention
 
 We follow the [conventional commits specification](https://www.conventionalcommits.org/en) for our commit messages:

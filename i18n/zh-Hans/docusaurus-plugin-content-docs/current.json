@@ -1,0 +1,62 @@
+{
+  "version.label": {
+    "message": "下一版",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Getting started": {
+    "message": "快速入门",
+    "description": "The label for category Getting started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Usage and APIs": {
+    "message": "用法和 API",
+    "description": "The label for category Usage and APIs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Hooks": {
+    "message": "Hooks",
+    "description": "The label for category Hooks in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Deprecated (v1.x)": {
+    "message": "已弃用 (v1.x)",
+    "description": "The label for category Deprecated (v1.x) in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.link.Releases": {
+    "message": "发布说明",
+    "description": "The label for link Releases in sidebar tutorialSidebar, linking to https://github.com/gbumps/react-native-screenguard/releases"
+  },
+  "sidebar.tutorialSidebar.doc.initSettings": {
+    "message": "initSettings",
+    "description": "The label for the doc item initSettings in sidebar tutorialSidebar, linking to the doc usages-and-apis/init-settings"
+  },
+  "sidebar.tutorialSidebar.doc.getScreenGuardLogs": {
+    "message": "getScreenGuardLogs",
+    "description": "The label for the doc item getScreenGuardLogs in sidebar tutorialSidebar, linking to the doc usages-and-apis/get-screen-guard-logs"
+  },
+  "sidebar.tutorialSidebar.doc.useSGScreenShot": {
+    "message": "useSGScreenShot",
+    "description": "The label for the doc item useSGScreenShot in sidebar tutorialSidebar, linking to the doc usages-and-apis/use-sg-screenshot"
+  },
+  "sidebar.tutorialSidebar.doc.useSGScreenRecord": {
+    "message": "useSGScreenRecord",
+    "description": "The label for the doc item useSGScreenRecord in sidebar tutorialSidebar, linking to the doc usages-and-apis/use-sg-screen-record"
+  },
+  "sidebar.tutorialSidebar.doc.Example": {
+    "message": "示例",
+    "description": "The label for the doc item Example in sidebar tutorialSidebar, linking to the doc example/example"
+  },
+  "sidebar.tutorialSidebar.doc.Testing": {
+    "message": "测试",
+    "description": "The label for the doc item Testing in sidebar tutorialSidebar, linking to the doc testing/testing"
+  },
+  "sidebar.tutorialSidebar.doc.Limitation": {
+    "message": "限制条件",
+    "description": "The label for the doc item Limitation in sidebar tutorialSidebar, linking to the doc limitation/limitation"
+  },
+  "sidebar.tutorialSidebar.doc.New Architecture": {
+    "message": "New Architecture",
+    "description": "The label for the doc item New Architecture in sidebar tutorialSidebar, linking to the doc new-architecture/new-architecture"
+  },
+  "sidebar.tutorialSidebar.doc.Contributing": {
+    "message": "贡献指南",
+    "description": "The label for the doc item Contributing in sidebar tutorialSidebar, linking to the doc contributing/contributing"
+  }
+}

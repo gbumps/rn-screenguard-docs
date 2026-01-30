@@ -80,7 +80,7 @@ When set to `true`, displays an overlay when user screenshot or screen record (s
 
 **Note:** Use if is not affecting your app's functionality, and use at your own risk!
 
-<video width="360" height="640" controls id="player" preload="auto" class="js-player" poster="https://cdn.jumpshare.com/preview/0zrtYizxZDQH444cpZRYPA6lEBrRdMWM7oC82h-xQ-t-dByliuK6qz4u9SWe4-8_XclBON8lcktbCo6nbddhTr2rlJGLHQA-Ab4EKoVOOcc" src="https://cdn.jumpshare.com/preview/0zrtYizxZDQH444cpZRYPA6lEBrRdMWM7oC82h-xQ-vbFQL-Vc8uvf9JPngOQjXjf5jqyer5k45p_av2XaQunsZ17lneJT6TiOmdE_GS0QE"></video>
+<video width="360" height="640" controls id="player" preload="auto" class="js-player" src="/react-native-screenguard/videos/ios_display_sg_overlay.mov"></video>
 ---
 
 #### `displayScreenguardOverlayAndroid`
@@ -93,7 +93,7 @@ When set to `true`, displays an overlay when user screenshot or screen record (s
 
 When set to `true`, displays an overlay when user returns to the app from background. Default is `true` (enabled). Only works when Screenguard is active.
 
-<video width="360" height="640" controls id="player" preload="auto" class="js-player" poster="https://cdn.jumpshare.com/preview/1ByrrspdiZXumB76Vpmfk093c6MHHbCqRqZgf3PUBmTmSPSRs_GcaI7ElflUSwr8XclBON8lcktbCo6nbddhTk103C5Zg2ber4mOrZftlhs" src="https://cdn.jumpshare.com/preview/1ByrrspdiZXumB76Vpmfk093c6MHHbCqRqZgf3PUBmSijwkJVLHjOyBh5HMlJ8G-5sfTP66r56r0rITsUkISV7kMw8G-JIzP9J4Ed_uoc4E"></video>
+<video width="360" height="640" controls id="player" preload="auto" class="js-player" src="/react-native-screenguard/videos/andr_display_sg_overlay.mov"></video>
 
 ---
 
@@ -145,12 +145,12 @@ Demo testing with `limitCaptureEvtCount` = `3`:
   <div style={{textAlign: 'center'}}>
     <span style={{backgroundColor: '#007AFF', color: 'white', padding: '4px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold'}}>iOS</span>
     <br /><br />
-    <video controls width="360" height="640" id="player" preload="auto" class="js-player" poster="https://cdn.jumpshare.com/preview/Gi3kzqByN5mQaw26NCqA53D5RDDqzmaK5lPLQJ04l-XuddpLFjIMCcmMJVHNYEP2XclBON8lcktbCo6nbddhTts8ipSTHh3ISxMG0i0Z02I" src="https://cdn.jumpshare.com/preview/Gi3kzqByN5mQaw26NCqA53D5RDDqzmaK5lPLQJ04l-VmOulyhaDsJ2fJsdmg3Y1F_bS1sW5PC4IYfQebwM8KttjaTy4xkZGjsNkGpeazdj4"></video>
+    <video controls width="360" height="640" id="player" preload="auto" class="js-player"  src="/react-native-screenguard/videos/ios_limit_cap_evt_3.mov"></video>
   </div>
   <div style={{textAlign: 'center'}}>
     <span style={{backgroundColor: '#3DDC84', color: 'white', padding: '4px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold'}}>Android</span>
     <br /><br />
-    <video width="360" height="640" controls id="player" preload="auto" class="js-player" poster="https://cdn.jumpshare.com/preview/Nn3nWIY-PUU3Y8T1EDYfnynir1LK_x6HWUIoMjKduZnU4tCLwwJH9EuVsz4_Qe1GXclBON8lcktbCo6nbddhThJ8_HpSLaNYqCQX33lEXkQ" src="https://cdn.jumpshare.com/preview/Nn3nWIY-PUU3Y8T1EDYfnynir1LK_x6HWUIoMjKduZmv7VIxuG6y23hKO4cx1cZNOTE4q7e8427gAZcUPjPnBxM5xNqrhAiOXXj9K3-MbT8"></video>
+    <video width="360" height="640" controls id="player" preload="auto" class="js-player" src="/react-native-screenguard/videos/andr_limit_cap_evt_3.mov"></video>
   </div>
 </div>
 

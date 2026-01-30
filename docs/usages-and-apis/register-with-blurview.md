@@ -59,7 +59,7 @@ On Android, if `displayScreenguardOverlayAndroid` is set to `false` in `initSett
   <div style={{textAlign: 'center'}}>
     <span style={{backgroundColor: '#3DDC84', color: 'white', padding: '4px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold'}}>Android</span>
     <br /><br />
-   <video width="360" height="640" controls id="player" preload="auto" class="js-player" poster="https://cdn.jumpshare.com/preview/2TFmq1IZKBjy3l16cE_xftjxSkAMv7xXstMgNnjuZaytsv2n-Beh_eH9rffeAl06RqyKvrXjSsuq_Ku_zFuoqDxak0DWrsGWyuaemFpF1CI" src="https://cdn.jumpshare.com/preview/2TFmq1IZKBjy3l16cE_xftjxSkAMv7xXstMgNnjuZay5eA1OTMQLOYOaMQAAF_NlkLaZG_LYDl8vzEPoVqAlXwwGzvbh9Ifmm3HLHtAyvtg"></video>
+   <video width="360" height="640" controls id="player" preload="auto" class="js-player" src="/react-native-screenguard/videos/andr_blur.mov"></video>
   
   </div>
 </div>
