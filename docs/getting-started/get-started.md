@@ -29,12 +29,12 @@ Prevent your app's sensitive content from being captured or recorded, with 3 sep
 
 ### 📸 Screenshot Detection
 
-Know exactly when users take screenshots of your app. The library provides real-time event detection that triggers immediately when a screenshot is captured:
+Real-time detection of screenshot events, triggered immediately when a screenshot is captured
 
-- **React instantly** — Execute custom logic when a screenshot is taken,like showing a warning, log event, etc..........
+- **React instantly** — Execute custom logic when a screenshot is taken.
 - **Access screenshot metadata** — Retrieve the file path of the captured screenshot on the device for your own purposes.
-- **Control event frequency** — Limit the number of screenshot events.
-- **Track status** — Know whether Screenguard is currently active when the screenshot event occurs.
+- **Control event screenshot** — Limit the number of screenshot events.
+- **Track status** — check ScreenGuard is currently active when the screenshot event occurs.
 
 ### 🎥 Screen Recording Detection
 
@@ -46,11 +46,7 @@ Monitor screen recording activity in real-time.
 
 ### 📝 Activity Logging
 
-Comprehensive logging for editing or debugging purposes. The library automatically tracks all ScreenGuard-related events, usually for:
-
-- **Debug issues** — Quickly identify when and how screen prevention was activated or deactivated during development.
-- **Audit capture attempts** — Keep a record of all screenshot and screen recording events for security auditing or analytics.
-- **Retrieve event history** — Access the full log of ScreenGuard activities programmatically for custom reporting or monitoring.
+Comprehensive logging for editing or debugging purposes.
 
 ---
 

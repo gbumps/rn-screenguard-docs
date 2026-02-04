@@ -29,12 +29,12 @@ Ngăn chặn nội dung nhạy cảm của ứng dụng bị chụp hoặc quay 
 
 ### 📸 Phát hiện Chụp ảnh màn hình
 
-Biết chính xác khi nào người dùng chụp ảnh màn hình ứng dụng của bạn. Thư viện cung cấp khả năng phát hiện sự kiện theo thời gian thực, kích hoạt ngay lập tức khi ảnh màn hình được chụp:
+Khả năng phát hiện sự kiện chụp màn hình theo thời gian thực, kích hoạt ngay lập tức khi ảnh màn hình được chụp:
 
-- **Phản hồi tức thì** — Thực hiện logic tùy chỉnh khi ảnh màn hình được chụp, như hiển thị cảnh báo, ghi log sự kiện, v.v.
+- **Phản hồi tức thì** — Thực hiện logic tùy chỉnh khi ảnh màn hình được chụp.
 - **Truy cập metadata của ảnh chụp** — Lấy đường dẫn tệp của ảnh màn hình đã chụp trên thiết bị cho các mục đích riêng của bạn.
-- **Kiểm soát tần suất sự kiện** — Giới hạn số lượng sự kiện chụp màn hình.
-- **Theo dõi trạng thái** — Biết liệu Screenguard có đang hoạt động hay không khi sự kiện chụp màn hình xảy ra.
+- **Kiểm soát sự kiện chụp màn hình** — Giới hạn số lượng sự kiện chụp màn hình.
+- **Theo dõi trạng thái** — kiểm tra ScreenGuard có đang hoạt động hay không khi sự kiện chụp màn hình xảy ra.
 
 ### 🎥 Phát hiện Quay video màn hình
 
@@ -44,13 +44,9 @@ Theo dõi hoạt động quay màn hình theo thời gian thực.
 - **Phản hồi các nỗ lực quay** — Thực hiện các hành động tùy chỉnh khi phát hiện thấy hành động quay màn hình.
 - **Hỗ trợ đa nền tảng** — Hoạt động trên **iOS 13+** và **Android 15+ (API 35+)**.
 
-### 📝 Ghi log hoạt động (Activity Logging)
+### 📝 Ghi log hoạt động
 
-Ghi log toàn diện phục vụ cho việc chỉnh sửa hoặc gỡ lỗi. Thư viện tự động theo dõi tất cả các sự kiện liên quan đến ScreenGuard, thường dùng để:
-
-- **Gỡ lỗi** — Nhanh chóng xác định thời điểm và cách thức tính năng ngăn chặn màn hình được kích hoạt hoặc hủy kích hoạt trong quá trình phát triển.
-- **Kiểm tra các nỗ lực chụp/quay** — Lưu giữ hồ sơ về tất cả các sự kiện chụp và quay màn hình để kiểm tra bảo mật hoặc phân tích.
-- **Truy xuất lịch sử sự kiện** — Truy cập toàn bộ nhật ký hoạt động của ScreenGuard thông qua code để báo cáo hoặc giám sát tùy chỉnh.
+Ghi log toàn diện phục vụ cho việc chỉnh sửa hoặc gỡ lỗi.
 
 ---
 
