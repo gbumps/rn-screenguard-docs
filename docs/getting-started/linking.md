@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # Linking
 
-## React Native 0.68+
+## React Native 0.60+
 
-From React Native v0.68 and above, linking is **automatic** via [Autolinking](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md). No manual linking is required.
+From React Native v0.60 and above, linking is **automatic** via [Autolinking](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md). No manual linking is required.
 
 ### iOS
 
@@ -25,15 +25,11 @@ No additional steps required. The library will be automatically linked during th
 ## Deprecated
 
 :::warning No Longer Supported
-The following sections are for legacy versions only. If you are using **React Native 0.68+** and **react-native-screenguard v1.0.8+**, you can skip this entire section.
+The following sections are for legacy versions only. If you are using **React Native 0.60+** and **react-native-screenguard v1.0.8+**, you can skip this entire section.
 :::
 
 <details>
 <summary><strong>React Native 0.59 and below (Manual Linking)</strong></summary>
-
-:::danger Not Supported in v2.0.0+
-React Native 0.59 and below is **no longer supported** in v2.0.0. Please upgrade to React Native 0.68+ to use the latest version.
-:::
 
 #### iOS Manual Linking
 

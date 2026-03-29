@@ -7,27 +7,57 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The library has been updated with New Architecture support. Full support available from version `2.0.0`.
+Thư viện đã được cập nhật để hỗ trợ New Architecture. Hỗ trợ đầy đủ có sẵn từ phiên bản `1.8.0`.
 
-## Latest Version (v2.0.0)
+## Phiên bản Beta (v2.0.0 - beta5) 
 
 <Tabs>
   <TabItem value="npm" label="npm" default>
     ```bash
-    npm install react-native-screenguard@2.0.0
+    npm install react-native-screenguard@2.0.0-beta5
     ```
   </TabItem>
   <TabItem value="yarn" label="yarn">
     ```bash
-    yarn add react-native-screenguard@2.0.0
+    yarn add react-native-screenguard@2.0.0-beta5
     ```
   </TabItem>
   <TabItem value="pnpm" label="pnpm">
     ```bash
-    pnpm add react-native-screenguard@2.0.0
+    pnpm add react-native-screenguard@2.0.0-beta5
     ```
   </TabItem>
 </Tabs>
+
+- Phát hành lại do thiếu hỗ trợ RN 0.67 và 0.59 trở xuống.
+
+## Phiên bản mới nhất (v2.0.1 - stable)
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+    ```bash
+    npm install react-native-screenguard@2.0.1
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```bash
+    yarn add react-native-screenguard@2.0.1
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash
+    pnpm add react-native-screenguard@2.0.1
+    ```
+  </TabItem>
+</Tabs>
+
+Bản phát hành này tiếp tục hỗ trợ `v2.0.0` cùng với một số cải tiến.
+
+- Sửa lỗi `limitCaptureEvtCount` trên Android không kích hoạt đúng cách.
+- Xóa mã không sử dụng trên Android.
+- Sửa lỗi `ClassCastException` trên React-native 0.82+ ở Android [#125](https://github.com/gbumps/react-native-screenguard/issues/125).
+
+## v2.0.0
 
 ### What's New in v2.0.0
 - separate screenshot and screen recording through `initSettings()`

@@ -7,27 +7,57 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The library has been updated with New Architecture support. Full support available from version `2.0.0`.
+该库已更新以支持 New Architecture。从 `1.8.0` 版本起提供全面支持。
 
-## Latest Version (v2.0.0)
+## 测试版本 (v2.0.0 - beta5) 
 
 <Tabs>
   <TabItem value="npm" label="npm" default>
     ```bash
-    npm install react-native-screenguard@2.0.0
+    npm install react-native-screenguard@2.0.0-beta5
     ```
   </TabItem>
   <TabItem value="yarn" label="yarn">
     ```bash
-    yarn add react-native-screenguard@2.0.0
+    yarn add react-native-screenguard@2.0.0-beta5
     ```
   </TabItem>
   <TabItem value="pnpm" label="pnpm">
     ```bash
-    pnpm add react-native-screenguard@2.0.0
+    pnpm add react-native-screenguard@2.0.0-beta5
     ```
   </TabItem>
 </Tabs>
+
+- 由于缺少对 RN 0.67 和 0.59 及以下版本的支持而重新发布。
+
+## 最新版本 (v2.0.1 - stable)
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+    ```bash
+    npm install react-native-screenguard@2.0.1
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```bash
+    yarn add react-native-screenguard@2.0.1
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash
+    pnpm add react-native-screenguard@2.0.1
+    ```
+  </TabItem>
+</Tabs>
+
+此版本继续支持 `v2.0.0` 并包含一些改进。
+
+- 修复了 Android 上 `limitCaptureEvtCount` 无法正确触发事件的问题。
+- 移除了 Android 上的未使用代码。
+- 修复了 Android 上 React-native 0.82+ 的 `ClassCastException` 问题 [#125](https://github.com/gbumps/react-native-screenguard/issues/125)。
+
+## v2.0.0
 
 ### What's New in v2.0.0
 - separate screenshot and screen recording through `initSettings()`

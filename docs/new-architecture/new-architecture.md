@@ -7,27 +7,56 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The library has been updated with New Architecture support. Full support available from version `2.0.0`.
+The library has been updated with New Architecture support. Full support available from version `1.8.0`.
 
-## Latest Version (v2.0.0)
+## Beta Version (v2.0.0 - beta5)
 
 <Tabs>
   <TabItem value="npm" label="npm" default>
     ```bash
-    npm install react-native-screenguard@2.0.0
+    npm install react-native-screenguard@2.0.0-beta5
     ```
   </TabItem>
   <TabItem value="yarn" label="yarn">
     ```bash
-    yarn add react-native-screenguard@2.0.0
+    yarn add react-native-screenguard@2.0.0-beta5
     ```
   </TabItem>
   <TabItem value="pnpm" label="pnpm">
     ```bash
-    pnpm add react-native-screenguard@2.0.0
+    pnpm add react-native-screenguard@2.0.0-beta5
     ```
   </TabItem>
 </Tabs>
+
+- Republish due to lack supporting RN below 0.67 and 0.59.
+
+## Latest Version (v2.0.1 - stable) 
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+    ```bash
+    npm install react-native-screenguard@2.0.1
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```bash
+    yarn add react-native-screenguard@2.0.1
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash
+    pnpm add react-native-screenguard@2.0.1
+    ```
+  </TabItem>
+</Tabs>
+
+This release continue to support `v2.0.0` alongside with some improvements.
+
+- Fixed `limitCaptureEvtCount` on Android not firing event correctly.
+- Remove unused code Android.
+- Fixed React-native 0.82+ ClassCassException on Android [#125](https://github.com/gbumps/react-native-screenguard/issues/125).
+
+## v2.0.0
 
 ### What's New in v2.0.0
 - separate screenshot and screen recording through `initSettings()`

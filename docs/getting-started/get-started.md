@@ -31,7 +31,6 @@ Prevent your app's sensitive content from being captured or recorded, with 3 sep
 
 Real-time detection of screenshot events, triggered immediately when a screenshot is captured
 
-- **React instantly** — Execute custom logic when a screenshot is taken.
 - **Access screenshot metadata** — Retrieve the file path of the captured screenshot on the device for your own purposes.
 - **Control event screenshot** — Limit the number of screenshot events.
 - **Track status** — check ScreenGuard is currently active when the screenshot event occurs.
@@ -77,7 +76,9 @@ Here are some resources to help you out:
 
 - [Node.js](https://nodejs.org/en/download/) version 15.0 or above:
   - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-- `react-native` >= 0.68
+- `react-native` >= 0.59
+- `react` >= 16.8.0
+- `Expo` >= 36
 - `Android SDK` >= 29
 - `Cocoapods` >= 1.1.4
 - `iOS minimum deployment target` >= 13

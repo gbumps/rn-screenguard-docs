@@ -77,7 +77,9 @@ Dưới đây là một số tài nguyên giúp bạn:
 
 - Phiên bản [Node.js](https://nodejs.org/en/download/) 15.0 trở lên:
   - Khi cài đặt Node.js, bạn nên tích chọn tất cả các ô liên quan đến dependencies.
-- `react-native` >= 0.68
+- `react-native` >= 0.59
+- `react` >= 16.8.0
+- `Expo` >= 36
 - `Android SDK` >= 29
 - `Cocoapods` >= 1.1.4
 - `iOS minimum deployment target` >= 13

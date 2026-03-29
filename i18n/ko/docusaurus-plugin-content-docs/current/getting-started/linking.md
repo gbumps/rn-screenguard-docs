@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # 연결 (Linking)
 
-## React Native 0.68+
+## React Native 0.60+
 
-React Native v0.68 이상부터는 [Autolinking](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md)을 통해 연결이 **자동**으로 이루어집니다. 수동 연결은 필요하지 않습니다.
+React Native v0.60 이상부터는 [Autolinking](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md)을 통해 연결이 **자동**으로 이루어집니다. 수동 연결은 필요하지 않습니다.
 
 ### iOS
 
@@ -25,15 +25,11 @@ cd ios && pod install
 ## 더 이상 사용되지 않음 (Deprecated)
 
 :::warning 더 이상 지원되지 않음
-다음 섹션은 레거시 버전 전용입니다. **React Native 0.68+** 및 **react-native-screenguard v1.0.8+**를 사용하는 경우 이 섹션 전체를 건너뛸 수 있습니다.
+다음 섹션은 레거시 버전 전용입니다. **React Native 0.60+** 및 **react-native-screenguard v1.0.8+**를 사용하는 경우 이 섹션 전체를 건너뛸 수 있습니다.
 :::
 
 <details>
 <summary><strong>React Native 0.59 이하 (수동 연결)</strong></summary>
-
-:::danger v2.0.0+에서 지원되지 않음
-React Native 0.59 이하는 v2.0.0에서 **더 이상 지원되지 않습니다**. 최신 버전을 사용하려면 React Native 0.68+로 업그레이드하세요.
-:::
 
 #### iOS 수동 연결
 

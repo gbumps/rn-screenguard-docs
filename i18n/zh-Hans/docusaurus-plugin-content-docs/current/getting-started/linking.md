@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # 链接 (Linking)
 
-## React Native 0.68+
+## React Native 0.60+
 
-从 React Native v0.68 及以上版本开始，通过 [Autolinking](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md) 实现**自动**链接。无需手动链接。
+从 React Native v0.60 及以上版本开始，通过 [Autolinking](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md) 实现**自动**链接。无需手动链接。
 
 ### iOS
 
@@ -25,15 +25,11 @@ cd ios && pod install
 ## 已弃用 (Deprecated)
 
 :::warning 不再支持
-以下章节仅适用于旧版本。如果您使用的是 **React Native 0.68+** 和 **react-native-screenguard v1.0.8+**，可以跳过整个章节。
+以下章节仅适用于旧版本。如果您使用的是 **React Native 0.60+** 和 **react-native-screenguard v1.0.8+**，可以跳过整个章节。
 :::
 
 <details>
 <summary><strong>React Native 0.59 及以下 (手动链接)</strong></summary>
-
-:::danger v2.0.0+ 不再支持
-React Native 0.59 及以下版本在 v2.0.0 中**不再受支持**。请升级到 React Native 0.68+ 以使用最新版本。
-:::
 
 #### iOS 手动链接
 

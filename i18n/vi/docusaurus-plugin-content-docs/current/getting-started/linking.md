@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # Liên kết (Linking)
 
-## React Native 0.68+
+## React Native 0.60+
 
-Từ React Native v0.68 trở lên, việc liên kết là **tự động** thông qua [Autolinking](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md). Không cần thực hiện liên kết thủ công.
+Từ React Native v0.60 trở lên, việc liên kết là **tự động** thông qua [Autolinking](https://github.com/react-native-community/cli/blob/main/docs/autolinking.md). Không cần thực hiện liên kết thủ công.
 
 ### iOS
 
@@ -25,15 +25,11 @@ Không cần thực hiện thêm bước nào. Thư viện sẽ được tự đ
 ## Không còn sử dụng (Deprecated)
 
 :::warning Không còn được hỗ trợ
-Các phần sau đây chỉ dành cho các phiên bản cũ. Nếu bạn đang sử dụng **React Native 0.68+** và **react-native-screenguard v1.0.8+**, bạn có thể bỏ qua toàn bộ phần này.
+Các phần sau đây chỉ dành cho các phiên bản cũ. Nếu bạn đang sử dụng **React Native 0.60+** và **react-native-screenguard v1.0.8+**, bạn có thể bỏ qua toàn bộ phần này.
 :::
 
 <details>
 <summary><strong>React Native 0.59 trở xuống (Liên kết thủ công)</strong></summary>
-
-:::danger Không hỗ trợ trong v2.0.0+
-React Native 0.59 trở xuống **không còn được hỗ trợ** trong v2.0.0. Vui lòng nâng cấp lên React Native 0.68+ để sử dụng phiên bản mới nhất.
-:::
 
 #### Liên kết thủ công iOS
 
