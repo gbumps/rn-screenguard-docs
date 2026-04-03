@@ -119,6 +119,11 @@ const config: Config = {
           label: "GitHub",
           position: "right",
         },
+        {
+          href: "https://www.npmjs.com/package/react-native-screenguard",
+          label: "npm",
+          position: "right",
+        },
       ],
     },
     prism: {
